@@ -91,7 +91,7 @@ impl Pruner {
 
         if latest_version > self.num_historical_versions_to_keep {
             let least_readable_version = latest_version - self.num_historical_versions_to_keep;
-            const TIMEOUT: Duration = Duration::from_millis(100);
+            const TIMEOUT: Duration = Duration::from_secs(1);
             let end = Instant::now() + TIMEOUT;
 
             while Instant::now() < end {
